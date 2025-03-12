@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +14,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/favicon_io/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -306,6 +311,38 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+<script>
+function sendEmail(e) {
+
+let name= document.querySelector(".name")
+let email= document.querySelector(".email")
+let subject= document.querySelector(".subject")
+let msg= document.querySelector(".msg")
+
+
+let body= "Name :" + name.value +  "<br/> Email :" + email.value  +  "<br/> Subject :" +  subject.value +  "<br/> Message :"  + msg.value
+
+
+      Email.send({
+        SecureToken : "19cfd035-d87a-46ca-8ffa-fc90ea9119fa ",
+        To: "contact@tedxsocimat.com",
+        From:"contact@tedxsocimat.com" ,
+        Subject: "Nouveau message reçu via le site",
+        Body: body
+      }).then(
+        message => alert(message)
+      );
+
+      console.log("nous avons reçus votre mail !");
+      document.getElementById("contactform").reset();
+      
+    }
+
+
+</script>
+
+    
 </body>
 
 </html>
